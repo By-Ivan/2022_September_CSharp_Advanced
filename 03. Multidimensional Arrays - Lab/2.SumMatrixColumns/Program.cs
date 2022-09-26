@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace _1.SumMatrixElements
+namespace _2.SumMatrixColumns
 {
     internal class Program
     {
@@ -11,22 +11,28 @@ namespace _1.SumMatrixElements
             int rows = matrixSize[0];
             int cols = matrixSize[1];
             int[,] matrix = new int[rows, cols];
-            int sum = 0;
 
             for (int i = 0; i < rows; i++)
             {
-                int[] currentRow = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+                int[] currentRow = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
                 for (int j = 0; j < currentRow.Length; j++)
                 {
-                    matrix[i,j] = currentRow[j];
-                    sum += currentRow[j];
+                    matrix[i, j] = currentRow[j];
                 }
             }
 
-            Console.WriteLine(rows);
-            Console.WriteLine(cols);
-            Console.WriteLine(sum);
+            for (int i = 0; i < cols; i++)
+            {
+                int sum = 0;
+
+                for (int j = 0; j < rows; j++)
+                {
+                    sum += matrix[j, i];
+                }
+
+                Console.WriteLine(sum);
+            }
         }
     }
 }
