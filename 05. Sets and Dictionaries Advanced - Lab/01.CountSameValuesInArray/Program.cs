@@ -6,7 +6,7 @@ namespace _01.CountSameValuesInArray
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
