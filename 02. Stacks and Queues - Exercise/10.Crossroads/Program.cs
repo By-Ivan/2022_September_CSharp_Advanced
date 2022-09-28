@@ -55,12 +55,23 @@ namespace _10.Crossroads
                     {
                         if (car.Count == 0)
                         {
+                            if (road.Count > 0)
+                            {
+                                road.Dequeue();
+                            }
+
                             count++;
                             break;
                         }
 
                         car.Dequeue();
                         timer--;
+
+                        if (car.Count == 0 && road.Count > 0)
+                        {
+                            road.Dequeue();
+                            count++;
+                        }
                     }
 
                     if (car.Count > 0)
