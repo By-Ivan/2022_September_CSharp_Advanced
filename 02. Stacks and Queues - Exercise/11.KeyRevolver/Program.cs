@@ -16,43 +16,37 @@ namespace _11.KeyRevolver
             int intelligence = int.Parse(Console.ReadLine());
             int bulletsInitialCount = bullets.Count;
 
-            while (bullets.Count > 0 && locks.Count > 0)
+            for (int i = 0; i < barrelSize; i++)
             {
-                for (int i = 0; i < barrelSize; i++)
+                if (bullets.Pop() <= locks.Peek())
                 {
-                    int currentBullet = bullets.Pop();
-                    int currentLock = locks.Peek();
-
-                    if (currentBullet <= currentLock)
-                    {
-                        Console.WriteLine("Bang!");
-                        locks.Dequeue();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ping!");
-                    }
-
-                    if (bullets.Count == 0 || locks.Count == 0)
-                    {
-                        break;
-                    }
+                    Console.WriteLine("Bang!");
+                    locks.Dequeue();
+                }
+                else
+                {
+                    Console.WriteLine("Ping!");
                 }
 
-                if (bullets.Count > 0)
+                if (i == barrelSize - 1 && bullets.Count > 0)
                 {
                     Console.WriteLine("Reloading!");
+                    i = -1;
+                }
+
+                if (bullets.Count == 0 && locks.Count > 0)
+                {
+                    Console.WriteLine($"Couldn't get through. Locks left: {locks.Count}");
+                    return;
+                }
+
+                if (locks.Count == 0)
+                {
+                    Console.WriteLine($"{bullets.Count} bullets left. Earned ${intelligence - ((bulletsInitialCount - bullets.Count) * bulletPrice)}");
+                    return;
                 }
             }
 
-            if (bullets.Count == 0 && locks.Count > 0)
-            {
-                Console.WriteLine($"Couldn't get through. Locks left: {locks.Count}");
-            }
-            else if (locks.Count == 0)
-            {
-                Console.WriteLine($"{bullets.Count} bullets left. Earned ${intelligence - ((bulletsInitialCount - bullets.Count) * bulletPrice)}");
-            }
         }
     }
 }
