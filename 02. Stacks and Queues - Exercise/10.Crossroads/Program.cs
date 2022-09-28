@@ -8,30 +8,27 @@ namespace _10.Crossroads
     {
         static void Main(string[] args)
         {
-            // Seconds in [1-100] range
             int durationGreenLight = int.Parse(Console.ReadLine());
-            // Seconds in [0-100] range
             int durationFreeWindow = int.Parse(Console.ReadLine());
-
+            int timer = 0;
             Queue<string> road = new Queue<string>();
-
             int count = 0;
-
             string input = Console.ReadLine();
 
             while (input != "END")
             {
                 if (input == "green")
                 {
-                    int timer = durationGreenLight;
-
                     if (road.Count == 0)
-                    {
+                    { 
+                        input = Console.ReadLine();
                         continue;
                     }
 
                     Queue<char> car = new Queue<char>(road.Peek().ToCharArray());
+                    timer = durationGreenLight;
 
+                    // Green light cycle
                     while (timer > 0)
                     {
                         if (car.Count == 0)
@@ -53,6 +50,7 @@ namespace _10.Crossroads
 
                     timer = durationFreeWindow;
 
+                    //Free windows cycle
                     while (timer > 0)
                     {
                         if (car.Count == 0)
