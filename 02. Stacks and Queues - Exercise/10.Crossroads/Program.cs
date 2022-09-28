@@ -20,7 +20,7 @@ namespace _10.Crossroads
                 if (input == "green")
                 {
                     if (road.Count == 0)
-                    { 
+                    {
                         input = Console.ReadLine();
                         continue;
                     }
@@ -53,7 +53,13 @@ namespace _10.Crossroads
                     //Free windows cycle
                     while (timer > 0)
                     {
-                        if (car.Count == 0)
+                        if (car.Count > 0)
+                        {
+                            car.Dequeue();
+                            timer--;
+                        }
+                        
+                        if(car.Count == 0)
                         {
                             if (road.Count > 0)
                             {
@@ -62,15 +68,6 @@ namespace _10.Crossroads
 
                             count++;
                             break;
-                        }
-
-                        car.Dequeue();
-                        timer--;
-
-                        if (car.Count == 0 && road.Count > 0)
-                        {
-                            road.Dequeue();
-                            count++;
                         }
                     }
 
