@@ -10,7 +10,7 @@ namespace _01.OddLines
     {
         static void Main(string[] args)
         {
-            
+            ;
         }
     }
 }
