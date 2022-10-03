@@ -22,38 +22,29 @@
             {
                 while (!reader.EndOfStream)
                 {
-                    bytes.Add(int.Parse(reader.ReadLine()));
+                    bytes.Add(byte.Parse(reader.ReadLine()));
                 }
-
-                reader.Close();
             }
 
-            byte[] byteArray = GetByteArray(bytesFilePath);
-        }
-
-        private static byte[] GetByteArray(string bytesFilePath)
-        {
-            using (FileStream fileStream = new FileStream(bytesFilePath, FileMode.Open, FileAccess.Read))
+            using (FileStream reader = new FileStream(binaryFilePath, FileMode.Open))
             {
-                int streamLength = (int)fileStream.Length;
-                byte[] byteArray = new byte[fileStream.Length];
-                int currentBytePosition = 0;
-                while (streamLength > 0)
+                while (reader.Position != reader.Length)
                 {
-                    int n = fileStream.Read(byteArray, currentBytePosition, streamLength);
+                    int currentByte = reader.ReadByte();
 
-                    if (n == 0)
+                    foreach (byte bt in bytes)
                     {
-                        break;
+                        if (bt == currentByte)
+                        {
+                            using (FileStream writer = new FileStream(outputPath, FileMode.Create))
+                            {
+                                writer.WriteByte(bt);
+                            }
+
+                            break;
+                        }
                     }
-
-                    currentBytePosition += n;
-                    streamLength -= n;
                 }
-
-                fileStream.Close();
-
-                return byteArray;
             }
         }
     }

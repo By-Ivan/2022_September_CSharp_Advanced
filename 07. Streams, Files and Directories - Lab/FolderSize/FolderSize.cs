@@ -14,6 +14,9 @@
 
         public static void GetFolderSize(string folderPath, string outputFilePath)
         {
+            DirectoryInfo info = new DirectoryInfo(folderPath);
+
+            var directories = info.GetDirectories();
         }
     }
 }
