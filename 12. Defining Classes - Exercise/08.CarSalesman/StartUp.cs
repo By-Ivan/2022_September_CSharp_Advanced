@@ -14,7 +14,7 @@ namespace _08.CarSalesman
 
             for (int i = 0; i < n; i++)
             {
-                string[] engineInfo = Console.ReadLine().Split(' ');
+                string[] engineInfo = Console.ReadLine().Trim().Split(' ',StringSplitOptions.RemoveEmptyEntries);
 
                 switch (engineInfo.Length)
                 {
@@ -45,7 +45,7 @@ namespace _08.CarSalesman
 
             for (int i = 0; i < m; i++)
             {
-                string[] carInfo = Console.ReadLine().Trim().Split(' ');
+                string[] carInfo = Console.ReadLine().Trim().Split(' ',StringSplitOptions.RemoveEmptyEntries);
 
                 switch (carInfo.Length)
                 {
