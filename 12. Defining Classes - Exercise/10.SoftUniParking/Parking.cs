@@ -23,7 +23,7 @@ namespace SoftUniParking
         {
             if (cars.ContainsKey(car.RegistrationNumber))
             {
-                return "Car with that registration number, already exist!";
+                return "Car with that registration number, already exists!";
             }
 
             if (Count == capacity)
@@ -49,14 +49,7 @@ namespace SoftUniParking
         }
 
         public Car GetCar(string registrationNumber)
-        {
-            if (cars.ContainsKey(registrationNumber))
-            {
-                return cars[registrationNumber];
-            }
-
-            return null;
-        }
+            => cars.ContainsKey(registrationNumber) ? cars[registrationNumber] : null;
 
         public void RemoveSetOfRegistrationNumber(List<string> registrationNumbers)
         {
