@@ -16,6 +16,7 @@ namespace GenericScale
             bool result2 = scale2.AreEqual();
             bool result3 = scale3.AreEqual();
             bool result4 = scale4.AreEqual();
+            bool result5 = scale4.AreEqual();
         }
     }
 }

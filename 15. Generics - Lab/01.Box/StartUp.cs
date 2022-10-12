@@ -16,6 +16,7 @@ namespace BoxOfT
             Console.WriteLine(box.Remove());
             box.Add(4);
             box.Add(5);
+            box.Add(6);
             Console.WriteLine(box.Remove());
 
         }
