@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace GenericArrayCreator
+namespace _08.Threeuple
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
