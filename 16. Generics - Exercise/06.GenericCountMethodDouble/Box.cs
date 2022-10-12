@@ -4,7 +4,7 @@ using System.Text;
 
 namespace _06.GenericCountMethodDouble
 {
-    public class Box<T> where T : IComparable
+    public class Box<T> where T : IComparable<T>
     {
         private const int initialArraySize = 2;
 
