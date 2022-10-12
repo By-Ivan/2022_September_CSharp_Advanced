@@ -14,8 +14,6 @@ namespace CustomDoublyLinkedList
             int testsCount = 20;
             int arraySizeStep = 10;
 
-            decimal[,] graph = new decimal[1200, arraySize / arraySizeStep];
-
             for (int i = 10; i < arraySize; i += arraySizeStep)
             {
                 int[] ints = new int[i];
@@ -77,27 +75,6 @@ namespace CustomDoublyLinkedList
                 decimal list1Average = Math.Round((decimal)(list1Avg / testsCount),2);
                 decimal list2Average = Math.Round((decimal)(list1Avg / testsCount), 2);
 
-
-                graph[list1Avg, i / arraySizeStep - 1] = 1;
-                graph[list2Avg, i / arraySizeStep - 1] = 2;
-
-            }
-
-            PlotGraph(graph, arraySize, arraySizeStep);
-        }
-
-        private static void PlotGraph(long[,] graph, int arraySize, int arraySizeStep)
-        {
-            for (int i = 0; i < 500; i++)
-            {
-                for (int j = 0; j < arraySize / arraySizeStep; j++)
-                {
-                    if (graph[i, j] == 1 || graph[i, j] == 2)
-                    {
-                        Console.SetCursorPosition(i, j);
-                        Console.Write(graph[i, j]);
-                    }
-                }
             }
         }
     }
