@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxOfT", "01.Box\BoxOfT.csproj", "{2A7C1FF1-1684-4718-A114-E85AC51DE948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericArrayCreator", "02.ArrayCreator\GenericArrayCreator.csproj", "{212AA108-A7B6-4F17-869D-5CFA2C83BD65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A7C1FF1-1684-4718-A114-E85AC51DE948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7C1FF1-1684-4718-A114-E85AC51DE948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7C1FF1-1684-4718-A114-E85AC51DE948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7C1FF1-1684-4718-A114-E85AC51DE948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212AA108-A7B6-4F17-869D-5CFA2C83BD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212AA108-A7B6-4F17-869D-5CFA2C83BD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212AA108-A7B6-4F17-869D-5CFA2C83BD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212AA108-A7B6-4F17-869D-5CFA2C83BD65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF27B9E6-8E25-4A38-92DF-1A58D32A642E}
+	EndGlobalSection
+EndGlobal
