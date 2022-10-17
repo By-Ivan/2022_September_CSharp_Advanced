@@ -1,9 +1,11 @@
-﻿namespace ExtractSpecialBytes
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace ExtractBytes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    public class ExtractSpecialBytes
+    
+    public class ExtractBytes
     {
         static void Main()
         {
@@ -32,13 +34,13 @@
                 {
                     int currentByte = reader.ReadByte();
 
-                    foreach (byte bt in bytes)
+                    foreach (int bt in bytes)
                     {
                         if (bt == currentByte)
                         {
-                            using (FileStream writer = new FileStream(outputPath, FileMode.Create))
+                            using (FileStream writer = new FileStream(outputPath, FileMode.Append))
                             {
-                                writer.WriteByte(bt);
+                                writer.WriteByte((byte)bt);
                             }
 
                             break;
