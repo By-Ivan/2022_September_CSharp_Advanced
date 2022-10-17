@@ -18,12 +18,12 @@
 
         public static void ZipFileToArchive(string inputFilePath, string zipArchiveFilePath)
         {
-            throw new NotImplementedException();
+            ;
         }
 
         public static void ExtractFileFromArchive(string zipArchiveFilePath, string fileName, string outputFilePath)
         {
-            throw new NotImplementedException();
+            ;
         }
     }
 }
