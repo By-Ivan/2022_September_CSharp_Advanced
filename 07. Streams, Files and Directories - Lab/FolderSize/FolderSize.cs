@@ -17,6 +17,11 @@
             DirectoryInfo info = new DirectoryInfo(folderPath);
 
             var directories = info.GetDirectories();
+
+            foreach (var item in directories)
+            {
+                ;
+            }
         }
     }
 }
