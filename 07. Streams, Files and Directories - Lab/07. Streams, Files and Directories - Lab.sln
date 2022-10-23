@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.FolderSize", "FolderSize
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.SplitMergeBinaryFile", "SplitMergeBinaryFile\06.SplitMergeBinaryFile.csproj", "{519061BD-4626-4435-BC4D-591E946D20CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractSpecialBytes", "ExtractSpecialBytes\ExtractSpecialBytes.csproj", "{1BBB51A9-D42C-4229-B6A8-5737D0FC230F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.ExtractSpecialBytes", "ExtractSpecialBytes\05.ExtractSpecialBytes.csproj", "{1BBB51A9-D42C-4229-B6A8-5737D0FC230F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

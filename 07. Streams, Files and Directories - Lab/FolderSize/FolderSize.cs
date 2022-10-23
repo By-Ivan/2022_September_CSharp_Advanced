@@ -16,7 +16,11 @@
         {
             DirectoryInfo info = new DirectoryInfo(folderPath);
 
+<<<<<<< HEAD
             var directories = info.GetDirectories();
+=======
+            DirectoryInfo[] directories = info.GetDirectories();
+>>>>>>> 2aea4f658e962f3d791e6cffefdeb1ccccd93dad
 
             long totalSize = 0;
 
@@ -27,6 +31,7 @@
 
             foreach (DirectoryInfo directory in directories)
             {
+<<<<<<< HEAD
                 totalSize += GetSubDirectorySize(directory);
             }
 
@@ -48,6 +53,32 @@
             }
 
             return totalSize;
+=======
+                totalSize += GetFolderSize(directory);
+            }
+
+            using (StreamWriter writer = new StreamWriter(outputFilePath))
+            {
+                writer.WriteLine($"{totalSize/1024D} KB");
+            }
+        }
+
+        internal static long GetFolderSize(DirectoryInfo directory)
+        {
+            long size = 0;
+
+            foreach (FileInfo file in directory.GetFiles())
+            {
+                size += file.Length;
+            }
+
+            foreach (DirectoryInfo dir in directory.GetDirectories())
+            {
+                size += GetFolderSize(dir);
+            }
+
+            return size;
+>>>>>>> 2aea4f658e962f3d791e6cffefdeb1ccccd93dad
         }
     }
 }

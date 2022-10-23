@@ -17,6 +17,7 @@ namespace CustomDoublyLinkedList
             str.AddLast("Gosho");
             str.AddLast("Pesho");
             str.AddLast("Sasho");
+            str.AddLast("Manol");
         }
     }
 }
